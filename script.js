@@ -39,10 +39,13 @@ let messageIndex = 0;
 function buttonClick(event) {
     const buttonId = event.target.id;   
     if (buttonId === 'yes') {
-     document.querySelector('h1').innerText = "Yay! Happy Valentine's Day! ❤️";
-     document.querySelector('.cat-image').src = 'gif/yay.gif';
-     yesBtn.style.display = 'none';
-     noBtn.style.display = 'none';
+       
+   document.body.innerHTML = `
+   <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh;">
+       <h1 style="font-size:3em; text-align:center;">Yay! Happy Valentines Day!❤️❤️❤️</h1>
+         <img src="gif/yay.gif" alt="Happy Cat" style="width:50%; border-radius:15px; margin-top:20px;">
+    </div>
+    `;
     }   
 
     
@@ -68,7 +71,7 @@ if (clickCount >= 2 ) {
 
 }
 
-if (yesSize >= 500) { // adjust threshold as needed
+if (yesSize >= 500) { 
     yesBtn.style.position = 'fixed';
     yesBtn.style.left = '50%';
     yesBtn.style.top = '50%';
@@ -84,3 +87,4 @@ if (yesSize >= 500) { // adjust threshold as needed
 
 yesBtn.addEventListener('click', buttonClick);
 document.getElementById('no').addEventListener('click', buttonClick);   
+
